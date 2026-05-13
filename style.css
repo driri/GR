@@ -1,0 +1,379 @@
+/* =========================================================
+   Simple Academic Website Stylesheet
+   To edit colors: change the variables in :root below.
+   ========================================================= */
+
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-alt: #efece5;
+  --text: #1f2933;
+  --muted: #5b6470;
+  --accent: #315c72;
+  --accent-dark: #244656;
+  --border: #ded8cc;
+  --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+  --max-width: 1120px;
+}
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Layout helpers */
+.container {
+  width: min(92%, var(--max-width));
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 860px;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section.alt {
+  background: var(--surface-alt);
+}
+
+.section h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--accent-dark);
+}
+
+.section h3 {
+  margin-top: 0;
+  color: var(--accent-dark);
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247, 245, 240, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+}
+
+.site-nav a:hover {
+  color: var(--accent-dark);
+}
+
+/* Hero */
+.hero {
+  padding: 5rem 0;
+  background:
+    radial-gradient(circle at top left, rgba(49, 92, 114, 0.14), transparent 32rem),
+    linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1;
+  color: var(--accent-dark);
+}
+
+.hero-role {
+  font-size: 1.25rem;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-affiliation {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+.hero-summary {
+  max-width: 720px;
+  font-size: 1.12rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.78rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid var(--accent);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--accent-dark);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--accent-dark);
+}
+
+.button.secondary:hover,
+.button.secondary:focus {
+  background: var(--surface-alt);
+  color: var(--accent-dark);
+}
+
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.hero-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.hero-card li {
+  margin-bottom: 0.55rem;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.35rem;
+  box-shadow: 0 10px 30px rgba(31, 41, 51, 0.05);
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Timeline / projects */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.timeline-item {
+  background: var(--surface);
+  border-left: 5px solid var(--accent);
+  border-radius: 18px;
+  padding: 1.25rem 1.3rem;
+  box-shadow: 0 10px 25px rgba(31, 41, 51, 0.05);
+}
+
+.timeline-item p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Lists */
+.publication-list {
+  padding-left: 1.4rem;
+}
+
+.publication-list li {
+  margin-bottom: 1rem;
+}
+
+.section-note,
+.small-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.clean-list,
+.talk-list {
+  padding-left: 1.2rem;
+}
+
+.clean-list li,
+.talk-list li {
+  margin-bottom: 0.7rem;
+}
+
+/* Contact */
+.contact-section {
+  background: var(--surface);
+}
+
+.separator {
+  color: var(--muted);
+  margin: 0 0.5rem;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.profile-links a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.55rem 0.85rem;
+  background: var(--bg);
+  font-weight: 700;
+}
+
+.profile-links a:hover {
+  background: var(--surface-alt);
+  text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 860px) {
+  .header-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .hero-grid,
+  .card-grid,
+  .timeline,
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3.5rem 0;
+  }
+
+  .section {
+    padding: 3.25rem 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-nav {
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  #contact a[href^="mailto"] {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+}
